@@ -1,4 +1,4 @@
-import ListGroup from './components/ListGroup'
+import Alert from "./components/Alert";
 let items=[
   "Mango",
   "Apple",
@@ -7,10 +7,10 @@ let items=[
   "Grapes"
 ];
 const handleSelectItem=(item:string)=>{
-  console.log(item)
+  console.log(item);
 }
 function App(){
-  return <h1><ListGroup items={items} heading='Fruits' onSelectItem={(handleSelectItem)} /></h1>
-}
+  return <Alert text="hello world"/>
+  }
 
 export default App;
