@@ -1,18 +1,16 @@
 import { useState } from "react";
-
-function ListGroup(){
+interface Props{
+  items:string[],
+  heading:string
+}
+function ListGroup({items,heading}:Props){
   // <></> these brackets represent fragment it is used to return more than one element
-  let items=[
-    "Mango",
-    "Apple",
-    "Orange",
-    "Banana"
-  ];
+  
   const [selectedIndex,setSelectedIndex]=useState(-1);
   
   return (
     <>  
-  <h1>Fruits</h1>
+  <h1>{heading}</h1>
   <ul className="list-group">
     {items.length===0 && <p>item not found</p>}
     {items.map((item,index)=><li className={selectedIndex===index
