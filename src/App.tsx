@@ -1,16 +1,8 @@
 import Alert from "./components/Alert";
-let items=[
-  "Mango",
-  "Apple",
-  "Orange",
-  "Banana",
-  "Grapes"
-];
-const handleSelectItem=(item:string)=>{
-  console.log(item);
-}
 function App(){
-  return <Alert text="hello world"/>
+  return <Alert>
+    Hello World<span> hii</span>
+  </Alert>
   }
 
 export default App;
