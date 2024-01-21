@@ -1,8 +1,8 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 function App(){
-  return <Alert>
-    Hello World<span> hii</span>
-  </Alert>
+  return <Button color="primary" onClick={()=>console.log("Button clicked")}>
+    Hello
+  </Button>
   }
 
 export default App;
