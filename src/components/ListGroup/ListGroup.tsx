@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ListGroup.css'
 interface Props{
   items:string[],
   heading:string,
@@ -6,13 +7,12 @@ interface Props{
 }
 function ListGroup({items,heading,onSelectItem}:Props){
   // <></> these brackets represent fragment it is used to return more than one element
-  
   const [selectedIndex,setSelectedIndex]=useState(-1);
   
   return (
     <>  
   <h1>{heading}</h1>
-  <ul className="list-group">
+  <ul className="listGroup">
     {items.length===0 && <p>item not found</p>}
     {items.map((item,index)=><li className={selectedIndex===index
     ?"list-group-item active"
