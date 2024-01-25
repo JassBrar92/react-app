@@ -3,9 +3,11 @@ import Alert from "./components/Alert";
 import Button from "./components/Button/Button";
 import ListGroup from "./components/ListGroup";
 import { BsCalendar2DayFill } from "react-icons/bs";
+import Like from "./components/Like";
 //import  './App.css';
 function App(){
-  return <Button onClick={()=>{}}>Submit</Button>
+  return <Like onClick={()=>console.log('clicked')}/>
+  //return <Button onClick={()=>{}}>Submit</Button>
   /*const [alertVisible,setAlertVisibility]=useState(false);
   return(
   <div>
