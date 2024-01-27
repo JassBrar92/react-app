@@ -7,7 +7,23 @@ import Like from "./components/Like";
 import Message from "./components/message";
 //import  './App.css';
 function App(){
-  const[drink,setDrink]=useState({
+   const [customer,setCustomer]=useState({
+    name:"Jas",
+    address:{
+      city:"Moga",
+      zipCode:1123
+    }
+   });
+   const  handleClick=()=>{
+    setCustomer({...customer,
+      address:{...customer.address,zipCode:3456}
+    });
+   };
+   return(<div>
+    {customer.address.zipCode},
+    <button onClick={handleClick}>Button</button>
+   </div>);
+  /*const[drink,setDrink]=useState({
     title:"Coke",
     price:5
   });
@@ -17,7 +33,7 @@ function App(){
   return(<div>
     {drink.price}
    <button onClick={handleClick}>Button</button>
-  </div>);
+  </div>);*/
   //return (<div><Message/></div>);
   //return <Like onClick={()=>console.log('clicked')}/>
   //return <Button onClick={()=>{}}>Submit</Button>
