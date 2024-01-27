@@ -1,13 +1,24 @@
 import { useState } from "react";
 import Alert from "./components/Alert";
-import Button from "./components/Button/Button";
+//import Button from "./components/Button/Button";
 import ListGroup from "./components/ListGroup";
 import { BsCalendar2DayFill } from "react-icons/bs";
 import Like from "./components/Like";
 import Message from "./components/message";
 //import  './App.css';
 function App(){
-  return (<div><Message/></div>);
+  const[drink,setDrink]=useState({
+    title:"Coke",
+    price:5
+  });
+  const handleClick=()=>{
+  setDrink({...drink,price:6})
+  }
+  return(<div>
+    {drink.price}
+   <button onClick={handleClick}>Button</button>
+  </div>);
+  //return (<div><Message/></div>);
   //return <Like onClick={()=>console.log('clicked')}/>
   //return <Button onClick={()=>{}}>Submit</Button>
   /*const [alertVisible,setAlertVisibility]=useState(false);
