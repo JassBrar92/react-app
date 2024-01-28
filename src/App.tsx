@@ -6,9 +6,18 @@ import { BsCalendar2DayFill } from "react-icons/bs";
 import Like from "./components/Like";
 import Message from "./components/Message";
 import produce from "immer";
+import Nav from "./components/Nav";
+import Cart from "./components/Cart";
 //import  './App.css';
 function App(){
-  const [bugs,setBug]=useState(
+    const [cartItems,setCartItems]=useState(
+      ["product1","product2"]
+    );
+    return(<div>
+      <Nav cartItemsCount={cartItems.length}/>
+      <Cart cartItems={cartItems}  onClear={()=>setCartItems([])}/>
+    </div>);
+  /*const [bugs,setBug]=useState(
     [
       {id:1,title:"Bug1",fixed:false},
       {id:2,title:"Bug2",fixed:false}
@@ -27,7 +36,7 @@ function App(){
      {bug.title} {bug.fixed? 'fixed':'New'}
     </p>)}
     <button onClick={handleClick}>Button</button>
-  </div>)
+  </div>)*/
   /*const [tags,setTags]=useState(["happy","Cheerful"]);
   const handleClick=()=>{
     //Add
