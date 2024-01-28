@@ -4,10 +4,23 @@ import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 import { BsCalendar2DayFill } from "react-icons/bs";
 import Like from "./components/Like";
-import Message from "./components/message";
+import Message from "./components/Message";
 //import  './App.css';
 function App(){
-  const [tags,setTags]=useState(["happy","Cheerful"]);
+  const [bugs,setBug]=useState(
+    [
+      {id:1,title:"Bug1",fixed:false},
+      {id:2,title:"Bug2",fixed:false}
+    ]
+    );
+  const handleClick=()=>{
+    setBug(bugs.map(bug=>bug.id===1?{...bug,fixed:true}:bug));
+    console.log(bugs);
+  }
+  return(<div>
+    <button onClick={handleClick}>Button</button>
+  </div>)
+  /*const [tags,setTags]=useState(["happy","Cheerful"]);
   const handleClick=()=>{
     //Add
     //setTags([...tags,"exciting"]);
@@ -21,7 +34,7 @@ function App(){
       {tags}
       <button onClick={handleClick}>Button</button>
     </div>
-  );
+  );*/
    /*const [customer,setCustomer]=useState({
     name:"Jas",
     address:{
