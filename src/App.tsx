@@ -7,7 +7,22 @@ import Like from "./components/Like";
 import Message from "./components/message";
 //import  './App.css';
 function App(){
-   const [customer,setCustomer]=useState({
+  const [tags,setTags]=useState(["happy","Cheerful"]);
+  const handleClick=()=>{
+    //Add
+    //setTags([...tags,"exciting"]);
+    //remove
+    setTags(tags.filter(tag=>tag!=="happy"));
+    //
+    //setTags(tags.map(tag=>tag==="happy"?"happiness":tag));
+  }
+  return(
+    <div>
+      {tags}
+      <button onClick={handleClick}>Button</button>
+    </div>
+  );
+   /*const [customer,setCustomer]=useState({
     name:"Jas",
     address:{
       city:"Moga",
@@ -22,7 +37,7 @@ function App(){
    return(<div>
     {customer.address.zipCode},
     <button onClick={handleClick}>Button</button>
-   </div>);
+   </div>);*/
   /*const[drink,setDrink]=useState({
     title:"Coke",
     price:5
