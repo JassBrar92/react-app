@@ -5,6 +5,7 @@ import ListGroup from "./components/ListGroup";
 import { BsCalendar2DayFill } from "react-icons/bs";
 import Like from "./components/Like";
 import Message from "./components/Message";
+import produce from "immer";
 //import  './App.css';
 function App(){
   const [bugs,setBug]=useState(
@@ -14,10 +15,17 @@ function App(){
     ]
     );
   const handleClick=()=>{
-    setBug(bugs.map(bug=>bug.id===1?{...bug,fixed:true}:bug));
-    console.log(bugs);
+    //setBug(bugs.map(bug=>bug.id===1?{...bug,fixed:true}:bug));
+    //console.log(bugs);
+    setBug(produce(draft=>{
+      const bug=draft.find(bugs=>bugs.id===1);
+      if(bug) bug.fixed=true;
+    }));
   }
   return(<div>
+    {bugs.map(bug=><p key={bug.id}>
+     {bug.title} {bug.fixed? 'fixed':'New'}
+    </p>)}
     <button onClick={handleClick}>Button</button>
   </div>)
   /*const [tags,setTags]=useState(["happy","Cheerful"]);
