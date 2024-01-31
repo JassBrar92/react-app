@@ -9,13 +9,17 @@ import produce from "immer";
 import Nav from "./components/Nav";
 import Cart from "./components/Cart";
 import ExpandedText from "./components/ExpandedText";
+import Form from "./components/Form";
 //import  './App.css';
 function App(){
   return(
+    <Form/>
+  );
+  /*return(
     <ExpandedText>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste eum nihil excepturi magnam esse omnis. Consequatur molestias quo cupiditate modi, reiciendis enim debitis consectetur architecto excepturi reprehenderit, tempora cum distinctio!
     </ExpandedText>
-  );
+  );*/
   /*
     const [cartItems,setCartItems]=useState(
       ["product1","product2"]
