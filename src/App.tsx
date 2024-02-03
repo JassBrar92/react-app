@@ -10,11 +10,22 @@ import Nav from "./components/Nav";
 import Cart from "./components/Cart";
 import ExpandedText from "./components/ExpandedText";
 import Form from "./components/Form";
+import ExpensesList from './expensesTracker/components/ExpensesList'
 //import  './App.css';
 function App(){
+  const [expenses,setExpense]=useState([
+    {id:1,description:'aaa',amount:10,category:"utilities"},
+    {id:2,description:'bbb',amount:10,category:"utilities"},
+    {id:3,description:'ccc',amount:10,category:"utilities"},
+    {id:4,description:'ddd',amount:10,category:"utilities"},
+  ]);
   return(
+    <div>
+    <ExpensesList expenses={expenses} onDelete={(id)=>setExpense(expenses.filter(e=>e.id!==id))}/>
+    </div>);
+ /* return(
     <Form/>
-  );
+  );*/
   /*return(
     <ExpandedText>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste eum nihil excepturi magnam esse omnis. Consequatur molestias quo cupiditate modi, reiciendis enim debitis consectetur architecto excepturi reprehenderit, tempora cum distinctio!
