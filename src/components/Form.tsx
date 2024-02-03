@@ -9,7 +9,7 @@ import {zodResolver} from '@hookform/resolvers/zod'
   });
   type FormData=z.infer<typeof schema>
 const Form = () => {
-       const {register,handleSubmit,formState:{errors}}=useForm<FormData>({resolver:zodResolver(schema)});
+       const {register,handleSubmit,formState:{errors,isValid}}=useForm<FormData>({resolver:zodResolver(schema)});
        const onSubmit=(data: FieldValues)=>{
         console.log(data);
        }
@@ -24,7 +24,7 @@ const Form = () => {
        id='age' type="number" className="form-control" />
        {errors.age&&<p className='text-danger'>{errors.age.message}</p>}
        </div>
-      <button className='btn-primary btn'>Submit</button>
+      <button disabled={!isValid} className='btn-primary btn'>Submit</button>
     </form>
   )
 }
