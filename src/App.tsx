@@ -27,7 +27,7 @@ function App(){
   return(
     <div>
     <div className="mb-5">
-      <ExpensesForm/>
+      <ExpensesForm onSubmit={expense=>setExpense([...expenses,{...expense,id:expenses.length+1}])}/>
     </div>
     <div className="mb-3">
       <ExpensesFilter onSelectedCategory={(category)=>{setSelectedCategory(category)}}/>
