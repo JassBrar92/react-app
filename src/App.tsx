@@ -12,18 +12,23 @@ import ExpandedText from "./components/ExpandedText";
 import Form from "./components/Form";
 import ExpensesList from './expensesTracker/components/ExpensesList'
 import ExpensesFilter from "./expensesTracker/components/ExpensesFilter";
+import ExpensesForm from "./expensesTracker/components/ExpensesForm";
 //import  './App.css';
+export const categories=['Utilities','Entertainment','Groceries'];
 function App(){
   const [selectedCategory,setSelectedCategory]=useState("");
   const [expenses,setExpense]=useState([
-    {id:1,description:'aaa',amount:10,category:"utilities"},
+    {id:1,description:'aaa',amount:10,category:"Utilities"},
     {id:2,description:'bbb',amount:10,category:"Entertainment"},
-    {id:3,description:'ccc',amount:10,category:"utilities"},
+    {id:3,description:'ccc',amount:10,category:"Utilities"},
     {id:4,description:'ddd',amount:10,category:"Groceries"},
   ]);
   const visibleExpense=selectedCategory?expenses.filter(e=>e.category===selectedCategory):expenses;
   return(
     <div>
+    <div className="mb-5">
+      <ExpensesForm/>
+    </div>
     <div className="mb-3">
       <ExpensesFilter onSelectedCategory={(category)=>{setSelectedCategory(category)}}/>
     </div>
